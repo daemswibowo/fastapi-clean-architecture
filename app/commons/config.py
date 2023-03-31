@@ -20,7 +20,6 @@ class Settings(BaseSettings):
     APP_ENV: str = os.getenv("APP_ENV", "dev")
     API: str = "/api"
     API_V1_STR: str = "/api/v1"
-    PROJECT_NAME: str = "fastapi-clean-architecture"
     DB_ENGINE_MAPPER: dict = {
         "postgresql": "postgresql",
         "mysql": "mysql+pymysql",
