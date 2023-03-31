@@ -13,17 +13,23 @@ class WebResponse:
         self.data = data
 
 
-@router.get("", response_model=TodoResponse, response_description="Todos list successful response")
+@router.get(
+    "",
+    response_model=TodoResponse,
+    response_description="Todos list successful response",
+)
 @inject
-async def get_todos_list(service: TodoService = Depends(Provide[Container.todo_service])):
-    return {
-        "data": service.get_todos()
-    }
+async def get_todos_list(
+    service: TodoService = Depends(Provide[Container.todo_service]),
+):
+    return {"data": service.get_todos()}
 
 
-@router.get("/{id}", response_model=TodoResponse, response_description="Find todo by id")
+@router.get(
+    "/{id}", response_model=TodoResponse, response_description="Find todo by id"
+)
 @inject
-async def find_todo_by_id(id: int, service: TodoService = Depends(Provide[Container.todo_service])):
-    return {
-        "data": service.get_todo_by_id(id)
-    }
+async def find_todo_by_id(
+    id: int, service: TodoService = Depends(Provide[Container.todo_service])
+):
+    return {"data": service.get_todo_by_id(id)}

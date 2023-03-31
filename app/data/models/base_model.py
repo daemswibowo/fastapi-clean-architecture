@@ -13,4 +13,5 @@ class BaseModel:
     @declared_attr
     def __tablename__(self) -> str:
         return pluralizer.plural(self.__name__.lower())
+
     id = Column(BigInteger, primary_key=True, autoincrement=True, nullable=False)

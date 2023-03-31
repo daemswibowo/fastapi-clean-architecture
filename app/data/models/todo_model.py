@@ -7,7 +7,9 @@ class Todo(BaseModel):
     title = Column(Text, nullable=False)
     is_done = Column(Boolean, nullable=False, default=False)
     created_at = Column(DateTime(timezone=True), nullable=False, default=func.now())
-    updated_at = Column(DateTime(timezone=True), nullable=False, default=func.now(), onupdate=func.now())
+    updated_at = Column(
+        DateTime(timezone=True), nullable=False, default=func.now(), onupdate=func.now()
+    )
 
     def to_dict(self):
         return {

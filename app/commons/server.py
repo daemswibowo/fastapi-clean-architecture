@@ -16,9 +16,6 @@ class Server:
 
         @self.app.get("/")
         def root():
-            return {
-                "name": settings.APP_NAME,
-                "stage": settings.APP_ENV
-            }
+            return {"name": settings.APP_NAME, "stage": settings.APP_ENV}
 
         self.app.include_router(v1_routes)

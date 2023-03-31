@@ -8,5 +8,5 @@ class TodoFactory(BaseFactory):
         model = Todo
 
     # define the data
-    title = factory.Faker('sentence')
-    is_done = factory.Faker('random_element', elements=[True, False])
+    title = factory.Faker("sentence")
+    is_done = factory.Faker("random_element", elements=[True, False])

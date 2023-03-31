@@ -8,9 +8,7 @@ from app.api.v1.services.todo_service import TodoService
 
 class Container(containers.DeclarativeContainer):
     wiring_config = containers.WiringConfiguration(
-        modules=[
-            "app.api.v1.controllers.todo_controller"
-        ]
+        modules=["app.api.v1.controllers.todo_controller"]
     )
 
     db = providers.Singleton(Database, url=settings.DATABASE_URI_MAPPER)
