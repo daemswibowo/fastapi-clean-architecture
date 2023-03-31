@@ -1,4 +1,3 @@
-import os
 import pytest
 from fastapi.testclient import TestClient
 from loguru import logger
@@ -6,9 +5,10 @@ from app.commons.di import Container
 from app.data.models.base_model import BaseModel
 from app.main import app
 from app.commons.database_test import DBTestEngine, DBTestSession
+from app.commons.config import ENV
 
-if os.getenv("ENV") not in ["test"]:
-    msg = f"ENV is not test, it is {os.getenv('ENV')}"
+if ENV not in ["test"]:
+    msg = f"ENV is not test, it is {ENV}"
     pytest.exit(msg)
 
 

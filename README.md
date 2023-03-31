@@ -48,7 +48,7 @@ Test files will be placed on `./tests` directory. All controllers test should be
 
 ### Prepare database
 
-Create database called `karina_test` on your local machine.
+Create database called `my_test_db` on your local machine.
 
 
 ### Running test
