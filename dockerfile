@@ -12,4 +12,6 @@ COPY Pipfile Pipfile.lock /src/
 RUN pipenv install --system --deploy
 RUN pipenv --clear
 COPY app /src/app
+
+# this will serve on port 8000
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0"]

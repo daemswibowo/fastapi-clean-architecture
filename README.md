@@ -85,4 +85,13 @@ pytest --capture=no
 ```
 
 # Production
-`Production docs will be put in here in advance`
+
+## Build docker image
+```bash
+docker build -t fastapi-clean-architecture .
+```
+
+## Run docker container
+```bash
+docker run -d -p 8000:8000 fastapi-clean-architecture --env-file .env
+```

@@ -1,0 +1,9 @@
+# build and host from Dockerfile with docker compose version 3
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - "4000:8000"
+    env_file:
+      - .env
