@@ -11,7 +11,8 @@ Fastapi Clean Architecture boilerplate.
 
 # Development
 
-Install requirements
+Copy `.env.example` to `.env` then install requirements:
+
 ```bash
 pipenv install
 # or
