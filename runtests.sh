@@ -1,1 +1,1 @@
-pytest -v --capture=no
+pipenv run pytest -v --capture=no
