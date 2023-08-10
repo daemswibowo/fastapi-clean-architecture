@@ -19,6 +19,8 @@ pip install -r requirements.txt
 ```
 Start development server
 ```bash
+pipenv run uvicorn app.main:app --reload
+# or
 uvicorn app.main:app --reload
 ```
 
@@ -28,18 +30,24 @@ We use [alembic](https://alembic.sqlalchemy.org/en/latest/tutorial.html) to mana
 
 ### Generating migrations
 ```bash
-alembic revision -m "create todos table"
+pipenv run alembic revision -m "{your migration message}"
+# or
+alembic revision -m "{your migration message}"
 ```
-Then the migrations file should be generated at `./migrations/versions/{timestamp}_create_todos_table.py` directory
+Then the migration file will be generated at `./migrations/versions/{timestamp}_create_todos_table.py` directory
 
 ### Migrate
 
 ```bash
+pipenv run alembic upgrade head
+# or
 alembic upgrade head
 ```
 
 ### Rollback
 ```bash
+pipenv run alembic downgrade -1
+# or
 alembic downgrade -1
 ```
 
@@ -55,15 +63,23 @@ Create database called `my_test_db` on your local machine.
 To run test you can use `pytest` command to do the job
 ```bash
 # run all tests
+pipenv run pytest
+# or
 pytest
 
-# run specific file test
+# run specific test file
+pipenv run pytest ./tests/path_to_your_test_file.py
+# or
 pytest ./tests/path_to_your_test_file.py
 
 # run with verbose
+pipenv run pytest -v
+# or
 pytest -v
 
 # run with complete log
+pipenv run pytest --capture=no
+# or
 pytest --capture=no
 ```
 
