@@ -18,9 +18,9 @@ alembic = "*"
 factory-boy = "*"
 pytest-env = "*"
 loguru = "*"
-pre-commit = "*"
 
 [dev-packages]
+pre-commit = "*"
 
 [requires]
 python_version = "3.11"
